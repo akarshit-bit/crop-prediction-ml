@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="login">
+    <h1>Crop Prediction Model</h1>
+    <form action = "{{ url_for('predict')}}" method = "post">
+        <input type = "text" name = "temperature" placeholder = "Temperature" required= "required"/>
+        <input type = "text" name = "humidity"  placeholder = "Humidity" required= "required"/>
+        <input type = "text" name = "ph" placeholder = "SOILpH Value" required= "required"/>
+        <input type = "text" name = "water" placeholder = "Water Availability" required= "required"/>
+
+        <select name="season" required>
+    <option value="">Select Season</option>
+    <option value="summer">Summer</option>
+    <option value="winter">Winter</option>
+    <option value="kharif">Kharif</option>
+    <option value="rabi">Rabi</option>
+</select>
+
+<button type = "submit" class = "btn btn-primary btn-block btn-large">Predict</button>
+
+    </form>
+
+    <h1 id="predi">
+        {{ prediction_text }}
+    </h1>
+</div>
+</body>
+</html>
