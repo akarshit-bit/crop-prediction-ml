@@ -1,3 +1,6 @@
+
+
+
 📌 Project Overview
 The Crop Prediction Model is a machine learning-based web application that predicts the most suitable crop to grow based on soil and environmental conditions.
 This project helps farmers and agricultural planners make data-driven decisions to improve crop yield and reduce losses.
